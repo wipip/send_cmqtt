@@ -31,7 +31,7 @@ def on_message(client, userdata, message):
 
 broker="157.230.214.127"
 port=1883
-client1= paho.Client("GIT-HUB")
+client1= paho.Client("mandarrealavirtual")
 client1.on_message = on_message
 
 
@@ -45,7 +45,7 @@ if st.button('ON'):
     client1.on_publish = on_publish                          
     client1.connect(broker,port)  
     message =json.dumps({"Act1":act1})
-    ret= client1.publish("cmqtt_s", message)
+    ret= client1.publish("motorsito", message)
  
     #client1.subscribe("Sensores")
     
@@ -59,7 +59,7 @@ if st.button('OFF'):
     client1.on_publish = on_publish                          
     client1.connect(broker,port)  
     message =json.dumps({"Act1":act1})
-    ret= client1.publish("cmqtt_s", message)
+    ret= client1.publish("suiche", message)
   
     
 else:
