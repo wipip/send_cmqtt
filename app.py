@@ -4,6 +4,12 @@ import streamlit as st
 import json
 import platform
 
+st.set_page_config(
+    page_title="recibidor de señales MQTT",
+    page_icon="👽",
+    layout="centered"
+)
+
 # Muestra la versión de Python junto con detalles adicionales
 st.write("Versión de Python:", platform.python_version())
 
@@ -30,7 +36,8 @@ client1.on_message = on_message
 
 
 
-st.title("MQTT Control")
+st.title("controlador de MQTT")
+st.subheader("manda señales desde el mundo real al virtual")
 
 if st.button('ON'):
     act1="ON"
